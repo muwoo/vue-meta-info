@@ -43,6 +43,9 @@
 - [Installation](#installation)
     - [Yarn](#yarn)
     - [NPM](#npm)
+- [Usage](#Usage)
+- [Tips](#Tips)
+- [Examples](#Examples)
     
 # description
 `vue-meta-info` 是一个基于[vue 2.0](https://vuejs.org)的插件，它会让你更好的管理你的 app 里面的 meta 信息。你可以直接
@@ -63,3 +66,65 @@ $ yarn add vue-meta-info
 ```sh
 $ npm install vue-meta-info --save
 ```
+# Usage
+## 步骤1：全局引入`vue-meta-info`
+```js
+import Vue from 'vue'
+import MetaInfo from 'vue-meta-info'
+
+Vue.use(MetaInfo)
+```
+## 步骤2：组件内静态使用 metaInfo
+```html
+<template>
+  ...
+</template>
+
+<script>
+  export default {
+    metaInfo: {
+      title: 'My Example App', // set a title
+      meta: [{                 // set meta
+        name: 'keyWords',
+        content: 'My Example App'
+      }]
+      link: [{                 // set link
+        rel: 'asstes',
+        href: 'https://assets-cdn.github.com/'
+      }]
+    }
+  }
+</script>
+```
+
+# Tips
+> 如果你的title或者meta是异步加载的，那么你可能需要这样使用
+```html
+<template>
+  ...
+</template>
+
+<script>
+  export default {
+    name: 'async',
+    metaInfo () {
+      return {
+        title: this.pageName
+      }
+    },
+    data () {
+      return {
+        pageName: 'loading'
+      }
+    },
+    mounted () {
+      setTimeout(() => {
+        this.pageName = 'async'
+      }, 2000)
+    }
+  }
+</script>
+```
+# Examples
+
+To run the examples; clone this repository & run `npm install` in the root directory, and then run `npm run dev`. Head to http://localhost:8080.
