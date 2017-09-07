@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-<a href="http://npmjs.org/package/vue-meta"><img src="https://img.shields.io/badge/npm-v0.1.0-blue.svg" alt="npm version"></a> 
+<a href="https://www.npmjs.com/package/vue-meta-info"><img src="https://img.shields.io/badge/npm-v0.1.0-blue.svg" alt="npm version"></a> 
   <img src="https://img.shields.io/badge/codecov-95.83%25%20-brightgreen.svg">
 </p>
 
