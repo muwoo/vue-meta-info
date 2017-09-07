@@ -2,31 +2,64 @@
   <img src='http://img.souche.com/f2e/2bce899682f76be6f90cf05104d361e6.png' width='300' alt="vue-meta">
 </div>
 
-> vue 单页面title meta link 三要素SEO优化
+<h5 align="center">
+  基于Vue 2.0 的单页面 meta info 管理.
+</h5>
+<p align="center">
+  <a href="https://github.com/feross/standard">
+    <img src="https://cdn.rawgit.com/feross/standard/master/badge.svg" alt="Standard - JavaScript Style">
+  </a>
+</p>
 
-## Build Setup
+<p align="center">
+<a href="http://npmjs.org/package/vue-meta"><img src="https://img.shields.io/badge/npm-v0.1.0-blue.svg" alt="npm version"></a> 
+  <img src="https://img.shields.io/badge/codecov-95.83%25%20-brightgreen.svg">
+</p>
 
-``` bash
-# install dependencies
-npm install
+```html
+<template>
+  ...
+</template>
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+<script>
+  export default {
+    metaInfo: {
+      title: 'My Example App', // set a title
+      meta: [{                 // set meta
+        name: 'keyWords',
+        content: 'My Example App'
+      }]
+      link: [{                 // set link
+        rel: 'asstes',
+        href: 'https://assets-cdn.github.com/'
+      }]
+    }
+  }
+</script>
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+- [Description](#description)
+- [Disclaimer](#disclaimer)
+- [Installation](#installation)
+    - [Yarn](#yarn)
+    - [NPM](#npm)
+    
+# description
+`vue-meta-info` 是一个基于[vue 2.0](https://vuejs.org)的插件，它会让你更好的管理你的 app 里面的 meta 信息。你可以直接
+在组件内设置 metaInfo 便可以自动挂载到你的页面中。如果你需要随着数据的变化，自动更新你的title、meta等信息，那么用此
+插件也是再合适不过了。
+# Disclaimer
+
+**You have been warned.** 有些情况下可能会存在一些还没有测到的bug，测试用例并没有完全覆盖所有的语句.
+
+# Installation
+
+### Yarn
+```sh
+$ yarn add vue-meta-info
+```
+
+### NPM
+```sh
+$ npm install vue-meta-info --save
+```
