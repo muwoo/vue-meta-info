@@ -1,4 +1,6 @@
-# vue-meta-info
+<div style="width: 100%;text-align:center">
+  <img src='http//img.souche.com/f2e/2bce899682f76be6f90cf05104d361e6.png' >
+</div>
 
 > vue 单页面title meta link 三要素SEO优化
 
