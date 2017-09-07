@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div>
       {{pageName === 'loading' ? pageName : 'this is '+pageName+' page'}}
   </div>

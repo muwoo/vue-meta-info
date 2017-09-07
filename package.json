@@ -1,18 +1,23 @@
 {
   "name": "vue-meta-info",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "vue 单页面title meta link 三要素SEO优化",
   "author": "monkeyWangs <2424880409@qq.com>",
-  "private": true,
+  "private": false,
   "scripts": {
+    "build": "rollup -c",
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
-    "build": "node build/build.js",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
+  "main": "lib/vue-meta-info.js",
   "dependencies": {
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0"
   },
