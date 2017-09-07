@@ -51,6 +51,7 @@
 `vue-meta-info` 是一个基于[vue 2.0](https://vuejs.org)的插件，它会让你更好的管理你的 app 里面的 meta 信息。你可以直接
 在组件内设置 metaInfo 便可以自动挂载到你的页面中。如果你需要随着数据的变化，自动更新你的title、meta等信息，那么用此
 插件也是再合适不过了。
+当然，有时候我们也可能会遇到让人头疼的SEO问题，那么使用此插件配合 [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) 也是再合适不过了
 # Disclaimer
 
 **You have been warned.** 有些情况下可能会存在一些还没有测到的bug，测试用例并没有完全覆盖所有的语句.
