@@ -6,13 +6,13 @@ import _setAttr from './setAttribute'
 import _removeNode from './removeNode'
 
 export default function operate() {
+  let _ndHead = document.getElementsByTagName('head')[0]
   return {
     /**
      * 设置 metaInfo 信息
      * @param metaOpts
      */
     setMetaInfo(metaOpts) {
-      let ndHead = document.getElementsByTagName('head')[0]
       for (let key in metaOpts) {
         if (key === 'title') {
           document.title = metaOpts.title
@@ -22,7 +22,7 @@ export default function operate() {
           metaOpts[key].forEach((opt) => {
             let ndKey = document.createElement(key)
             _setAttr(ndKey, opt)
-            ndHead.appendChild(ndKey)
+            _ndHead.appendChild(ndKey)
           })
         }
       }
@@ -31,8 +31,7 @@ export default function operate() {
      * 删除 metaInfo 添加的 meta 信息
      */
     removeMetaInfo() {
-      let ndHead = document.getElementsByTagName('head')[0]
-      _removeNode(ndHead)
+      _removeNode(_ndHead)
     }
   }
 }
