@@ -52,6 +52,7 @@
 在组件内设置 metaInfo 便可以自动挂载到你的页面中。如果你需要随着数据的变化，自动更新你的title、meta等信息，那么用此
 插件也是再合适不过了。
 当然，有时候我们也可能会遇到让人头疼的SEO问题，那么使用此插件配合 [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin) 也是再合适不过了
+> 更多使用介绍：https://zhuanlan.zhihu.com/p/29148760?group_id=890298677627879424
 # Disclaimer
 
 **You have been warned.** 有些情况下可能会存在一些还没有测到的bug，测试用例并没有完全覆盖所有的语句.
