@@ -38,6 +38,18 @@ VueMetaInfo.install = function (Vue) {
           updateMetaInfo(this.$metaInfo)
         })
       }
+    },
+    activated () {
+      if (this._hasMetaInfo) {
+        // keep-alive 组件激活时调用
+        updateMetaInfo(this.$metaInfo)
+      }
+    },
+    deactivated () {
+      if (this._hasMetaInfo) {
+        // keep-alive 组件停用时调用。
+        updateMetaInfo(this.$metaInfo)
+      }
     }
   })
 }
