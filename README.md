@@ -47,6 +47,7 @@
     - [NPM](#npm)
 - [Usage](#Usage)
 - [Tips](#Tips)
+- [SSR](#For SSR)
 - [Examples](#Examples)
 
 # description
