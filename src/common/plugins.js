@@ -3,6 +3,7 @@
  * Date: 17/9/7
  */
 import updateMetaInfo from '../metaOperate/updateMetaInfo'
+import renderServerMetaInfo from '../metaOperate/server'
 import {VUE_META_KEY_NAME} from './constants'
 
 let VueMetaInfo = () => {
@@ -10,7 +11,7 @@ let VueMetaInfo = () => {
 
 VueMetaInfo.install = function (Vue) {
   Vue.mixin({
-    beforeCreate () {
+    beforeCreate() {
       // 如果组件内设置了 vueMeta 信息
       if (this.$options[VUE_META_KEY_NAME] !== undefined) {
         let type = typeof this.$options[VUE_META_KEY_NAME]
@@ -25,13 +26,19 @@ VueMetaInfo.install = function (Vue) {
           () => this.$options[VUE_META_KEY_NAME]
       }
     },
-    beforeMount () {
+    created () {
+      if (this._hasMetaInfo) {
+        updateMetaInfo(this.$metaInfo)
+      }
+      renderServerMetaInfo(this.$ssrContext, this.$metaInfo)
+    },
+    beforeMount() {
       // 在组件挂载到 dom 之前更新 meta 信息
       if (this._hasMetaInfo) {
         updateMetaInfo(this.$metaInfo)
       }
     },
-    mounted () {
+    mounted() {
       // dom 挂载之后 继续监听 meta 信息。如果发生变化，继续更新
       if (this._hasMetaInfo) {
         this.$watch('$metaInfo', () => {
@@ -39,13 +46,13 @@ VueMetaInfo.install = function (Vue) {
         })
       }
     },
-    activated () {
+    activated() {
       if (this._hasMetaInfo) {
         // keep-alive 组件激活时调用
         updateMetaInfo(this.$metaInfo)
       }
     },
-    deactivated () {
+    deactivated() {
       if (this._hasMetaInfo) {
         // keep-alive 组件停用时调用。
         updateMetaInfo(this.$metaInfo)
