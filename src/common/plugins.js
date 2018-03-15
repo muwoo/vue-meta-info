@@ -27,9 +27,6 @@ VueMetaInfo.install = function (Vue) {
       }
     },
     created () {
-      if (this._hasMetaInfo) {
-        updateMetaInfo(this.$metaInfo)
-      }
       renderServerMetaInfo(this.$ssrContext, this.$metaInfo)
     },
     beforeMount() {
