@@ -2,7 +2,7 @@
  * @author monkeywang
  * Date: 2018/3/15
  */
-export default function (context, metaInfo) {
+export default function (context, metaInfo = {title: ''}) {
   if (context && metaInfo) {
     context.title = metaInfo.title
     context.render = {}
