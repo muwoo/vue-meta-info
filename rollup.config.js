@@ -22,5 +22,8 @@ export default {
      * (c) ${new Date().getFullYear()} monkeyWang
      * @license MIT
      */
-  `.replace(/ {4}/gm, '').trim()
+  `.replace(/ {4}/gm, '').trim(),
+  output: {
+    name: 'VueMetaInfo'
+  }
 }

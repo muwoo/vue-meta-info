@@ -2,9 +2,9 @@
  * @author monkeywang
  * Date: 2018/3/15
  */
-export default function (context, metaInfo = {title: ''}) {
+export default function (context, metaInfo) {
   if (context && metaInfo) {
-    context.title = metaInfo.title
+    context.title = metaInfo.title || ''
     context.render = {}
     Object.keys(metaInfo).forEach(info => {
       if (info === 'title') return
